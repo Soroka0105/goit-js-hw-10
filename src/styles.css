@@ -1,0 +1,17 @@
+.breed-select {
+}
+.loader {
+}
+
+.loader-hiden {
+  display: none;
+}
+.error-hiden {
+  display: none;
+}
+.error {
+}
+.cat-info {
+  display: flex;
+  gap: 10px;
+}
