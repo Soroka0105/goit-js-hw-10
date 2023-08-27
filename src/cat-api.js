@@ -29,29 +29,38 @@ const fetchCatByBreed = function (breedId) {
       }
       return responce.json();
     })
-    .then(data => (elms.list.innerHTML = create(data[0])))
+    .then(
+      data => (elms.list.innerHTML = create(data[0])),
+      elms.errorText.classList.replace('error', 'error-hiden')
+    )
 
     .catch(error => {
       console.log('error');
+      elms.errorText.classList.replace('error-hiden', 'error');
     });
+
   elms.select.onchange = function () {
     let item = elms.select.value;
     console.log(item);
     fetchCatByBreed(item);
+    elms.loader.classList.replace('loader-hiden', 'loader');
   };
+
   function create(obj) {
+    elms.loader.classList.replace('loader', 'loader-hiden');
     return `<div>
             <h2>${obj.breeds[0].name}</h2>
             <p>${obj.breeds[0].description}</p>
             <h3>Temperament: ${obj.breeds[0].temperament}</h3>
           </div>
-          <div><img src="${obj.url}" alt="${obj.breeds[0].name}" width="500px"></div>`;
+          <div><img src="${obj.url}" alt="${obj.breeds[0].name}" width="500px" height="500px"></div>`;
   }
 };
+
 const elms = {
   select: document.querySelector('.breed-select'),
-  loader: document.querySelector('.loader'),
-  errorText: document.querySelector('.error'),
+  loader: document.querySelector('.loader-hiden'),
+  errorText: document.querySelector('.error-hiden'),
   list: document.querySelector('.cat-info'),
   APIkey:
     'live_5GOq6uH27v6jwTh5Yr3LAXJWqhClMJegkdGVZbz9JKDKQiltHl2IfZ5hnAIcvAbx',

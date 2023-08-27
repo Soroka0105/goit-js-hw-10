@@ -1,6 +1,7 @@
 .breed-select {
 }
 .loader {
+  display: block;
 }
 
 .loader-hiden {
@@ -10,6 +11,7 @@
   display: none;
 }
 .error {
+  display: block;
 }
 .cat-info {
   display: flex;
