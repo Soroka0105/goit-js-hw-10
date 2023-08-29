@@ -1,7 +1,7 @@
 import { create, createMarkUp, elms } from './app';
 export { fetchCatByBreed, fetchBreeds };
 
-fetchBreeds = function () {
+const fetchBreeds = function () {
   fetch(`${elms.BASE_URL}/breeds/`)
     .then(responce => {
       console.log(responce);
@@ -16,7 +16,7 @@ fetchBreeds = function () {
     });
 };
 
-fetchCatByBreed = function (breedId) {
+const fetchCatByBreed = function (breedId) {
   fetch(
     `${elms.BASE_URL}/images/search?breed_ids=${breedId}&api_key=${elms.APIkey}`
   )
