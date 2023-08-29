@@ -12,8 +12,12 @@
 }
 .error {
   display: block;
+  color: red;
 }
 .cat-info {
   display: flex;
   gap: 10px;
+}
+.cat-info-hiden {
+  display: none;
 }
