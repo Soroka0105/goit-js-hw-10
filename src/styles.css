@@ -1,7 +1,12 @@
 .breed-select {
+  display: none;
+}
+.breed-select-visible {
+  display: block;
 }
 .loader {
   display: block;
+  font-weight: 900;
 }
 
 .loader-hiden {

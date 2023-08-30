@@ -1,9 +1,10 @@
 import { create, createMarkUp, elms } from './app';
-export { fetchCatByBreed, fetchBreeds };
+// export { fetchCatByBreed, fetchBreeds };
 
-const fetchBreeds = function () {
+export const fetchBreeds = function () {
   fetch(`${elms.BASE_URL}/breeds/`)
     .then(responce => {
+      // elms.loader.classList.replace('loader-hiden', 'loader');
       console.log(responce);
       if (!responce.ok) {
         throw new Error(responce.statusText);
@@ -13,10 +14,12 @@ const fetchBreeds = function () {
     .then(data => (elms.select.innerHTML = createMarkUp(data)))
     .catch(error => {
       console.log(error);
+      elms.errorText.classList.replace('error-hiden', 'error');
+      elms.loader.classList.replace('loader', 'loader-hiden');
     });
 };
 
-const fetchCatByBreed = function (breedId) {
+export const fetchCatByBreed = function (breedId) {
   fetch(
     `${elms.BASE_URL}/images/search?breed_ids=${breedId}&api_key=${elms.APIkey}`
   )
