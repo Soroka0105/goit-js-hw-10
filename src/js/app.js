@@ -24,5 +24,3 @@ export const elms = {
     'live_5GOq6uH27v6jwTh5Yr3LAXJWqhClMJegkdGVZbz9JKDKQiltHl2IfZ5hnAIcvAbx',
   BASE_URL: 'https://api.thecatapi.com/v1',
 };
-
-// export { elms, create, createMarkUp };
